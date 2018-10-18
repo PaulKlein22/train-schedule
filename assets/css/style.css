@@ -1,8 +1,32 @@
+body {
+    background: #F7F8F8;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ACBB78, #F7F8F8);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ACBB78, #F7F8F8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
 .table {
     border: 1px solid #2679ff;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+tr:nth-child(2n) {
+    background: #505050;
 }
 
 .form {
     border: 1px solid #2679ff;
     padding: 10px;
+    margin-bottom: 20px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+#header {
+    text-align: center;
+    background-color: #469982;
+    border-bottom: 5px solid black;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.display {
+    font-size: 99px;
 }

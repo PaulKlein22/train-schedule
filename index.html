@@ -8,16 +8,21 @@
     <link rel="stylesheet" type=text/css href="assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
 </head>
 <body>
 
+    <div class="jumbotron" id="header">
+        <h1 class="display"><i class="fas fa-train"></i> Train Schedule</h1>
+        <br>
+        <h3>The Current Time Is:</h3>
+        <h3 class="time"></h3>
+    </div>
+
     <div class="container">
 
-        <div class="jumbotron" id="header">
-            <h1 class="display">Train Schedule</h1>
-        </div>
-
-        <table class="table" id="train-table">
+        <table class="table table-dark" id="train-table">
             <thead>
                 <tr>
                     <th scope="col">Train Name</th>
@@ -35,24 +40,23 @@
 
         <form class="form">
             <div class="form-group">
-                <label for="train-name">Train Name</label>
+                <label for="train-name"><strong>Train Name</strong></label>
                 <input type="text" class="form-control" id="train-name" " placeholder="enter train name">
             </div>
             <div class="form-group">
-                <label for="destination">Destination</label>
+                <label for="destination"><strong>Destination</strong></label>
                 <input type="text" class="form-control" id="destination" placeholder="enter your destination">
             </div>
             <div class="form-group">
-                <label for="train-time">First Train Time (HH:mm - military time)</label>
-                <input type="text" class="form-control" id="train-time" placeholder="enter the first train time">
+                <label for="train-time"><strong>First Train Time (hh:mm - military time)</strong></label>
+                <input type="text" class="form-control" id="train-time" placeholder="enter the time of the day's first train">
             </div>
             <div class="form-group">
-                <label for="frequency">Frequency (min)</label>
+                <label for="frequency"><strong>Frequency (min)</strong></label>
                 <input type="text" class="form-control" id="frequency" placeholder="enter how often the train arrives">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-
     </div>
 
 

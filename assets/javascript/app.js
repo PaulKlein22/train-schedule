@@ -6,9 +6,11 @@ database.ref().on("child_added", function(snapshot){
     var firstTrain = 0;
     var firstTrainConverted = moment(firstTrain, "HH:mm")
     var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
+    var frequency = snapshot.val().frequency;
     var remainder = diffTime % frequency;
     var minutesAway = frequency - remainder;
-    var nextTrain = moment().add(minutesAway, "minutes");
+    var nextArrival = moment().add(minutesAway, "minutes").format("ddd, MMMM Do YYYY, h:mm:ss a");
+     //Is Next Arrival calculating correctly?
 
     $("#train-table tbody").append(
         `
@@ -16,7 +18,7 @@ database.ref().on("child_added", function(snapshot){
                 <td>${snapshot.val().train}</td>
                 <td>${snapshot.val().destination}</td>
                 <td>${snapshot.val().frequency}</td>
-                <td>${nextTrain}</td>
+                <td>${nextArrival}</td>
                 <td>${minutesAway}</td>
             </tr>
         `
@@ -42,3 +44,13 @@ $("button").on("click", function(event){
         frequency,
     });
 });
+
+var currentTime = moment().format("ddd, MMMM Do YYYY, h:mm:ss a");
+$(".time").text(currentTime);
+
+//setInterval to have the current time automatically update
+// var currentTime = setInterval(clock, 1000)
+
+// clock({
+
+// });
